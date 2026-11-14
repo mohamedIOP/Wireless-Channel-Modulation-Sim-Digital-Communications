@@ -24,3 +24,5 @@ BER_theory = qfunc(sqrt(2*10.^(EbN0_dB/10))); % Theory
 semilogy(EbN0_dB, BER, 'o-', EbN0_dB, BER_theory, '--'); grid on;
 xlabel('Eb/N0 (dB)'); ylabel('BER'); legend('Simulated','Theory');
 title('QPSK over AWGN');
+
+EbN0_qpsk = EbN0_dB; BER_qpsk = BER; th_qpsk = qfunc(sqrt(2*10.^(EbN0_dB/10)));

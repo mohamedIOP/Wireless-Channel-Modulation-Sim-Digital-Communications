@@ -25,3 +25,8 @@ grid on;
 xlabel('Eb/N0 (dB)'); ylabel('BER');
 legend('Simulated', 'Theory');
 title('BPSK over AWGN');
+
+
+EbN0_bpsk = EbN0_dB;
+BER_bpsk  = BER;
+th_bpsk   = qfunc(sqrt(2*10.^(EbN0_dB/10)));
