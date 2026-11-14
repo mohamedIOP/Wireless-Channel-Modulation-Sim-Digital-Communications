@@ -10,11 +10,8 @@ s1 = sqrt(2*Eb/Tb) * exp(+1j*pi*t/Tb);   % bit 1: +1/(2Tb)
 
 x = zeros(1, Nb*sps);
 for k = 1:Nb
-    if bits(k) == 0
-        x((k-1)*sps+1 : k*sps) = s0;
-    else
-        x((k-1)*sps+1 : k*sps) = s1;
-    end
+    if bits(k) == 0, seg = s0; else, seg = s1; end
+    x((k-1)*sps+1 : k*sps) = seg * (-1)^(k-1);   % global-time carrier phase
 end
 
 Fs = 1/Ts;                         % = sps/Tb
